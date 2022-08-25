@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   textPrice: {
-    color: "#FFFFFF",
+    color: "#ffffff",
     fontSize: 16,
     fontWeight: "bold",
   },

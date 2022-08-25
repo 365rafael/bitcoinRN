@@ -12,33 +12,31 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
   },
-  dayCotation: {
-    fontSize: 16,
-    paddingLeft: 2,
-    color: "#FFFFFF",
-    fontWeight: "bold",
-  },
-  contextleft: {
+  contextLeft: {
     width: "36%",
-    height: "100%",
     alignItems: "flex-start",
-  },
-  contextRigth: {
-    width: "60%",
-    alignItems: "flex-end",
-  },
-  logBitcoin: {
-    width: 40,
-    height: 40,
-    marginLeft: 2,
-    tintColor: "#f50d41",
   },
   boxLogo: {
     flexDirection: "row",
     alignItems: "center",
   },
+  logBitcoin: {
+    width: 40,
+    height: 40,
+    marginLeft: 2,
+  },
+  dayCotation: {
+    fontSize: 16,
+    paddingLeft: 2,
+    color: "#ffffff",
+    fontWeight: "bold",
+  },
+  contextRigth: {
+    width: "60%",
+    alignItems: "flex-end",
+  },
   price: {
-    color: "#FFFFFF",
+    color: "#ffffff",
     fontSize: 18,
     fontWeight: "bold",
   },
