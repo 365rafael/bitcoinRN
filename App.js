@@ -54,7 +54,7 @@ async function getPriceCoinsGraphic(url) {
 export default function App() {
   const [coinsList, setcoinsList] = useState([]);
   const [coinsGrafichList, setcoinsGrafichList] = useState([0]);
-  const [days, setdays] = useState(30);
+  const [days, setdays] = useState(60);
   const [updateData, setupdateData] = useState(true);
   const [price, setPrice] = useState();
 
@@ -63,7 +63,7 @@ export default function App() {
     setupdateData(true);
   }
   function priceCotation() {
-    setPrice(coinsGrafichList);
+    setPrice(coinsGrafichList.pop());
   }
 
   useEffect(() => {
@@ -73,6 +73,7 @@ export default function App() {
     getPriceCoinsGraphic(url(days)).then((dataG) => {
       setcoinsGrafichList(dataG);
     });
+    priceCotation();
     if (updateData) {
       setupdateData(false);
     }
@@ -81,7 +82,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#f50d41" barStyle="dark-content" />
-      <CurrentPrice />
+      <CurrentPrice lastCotation={price} />
       <HistoryGraphic infoDataGraphic={coinsGrafichList} />
       <QuotationsList
         filterDay={updateDay}

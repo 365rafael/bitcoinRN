@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
   },
-  contextLeft: {
+  contextleft: {
     width: "36%",
     alignItems: "flex-start",
   },

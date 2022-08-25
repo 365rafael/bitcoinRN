@@ -10,7 +10,8 @@ import styles from "./styles";
 import QuotationItems from "./QuotationItems";
 
 export default function QuotationsList(props) {
-  const daysQuery = props.filterDay; // vamos criar uma const que vai chamar nosso  propsfilterDay
+  // vamos criar uma const que vai chamar nosso  propsfilterDay
+  const daysQuery = props.filterDay;
   return (
     <Fragment>
       <View style={styles.filters}>
@@ -28,9 +29,9 @@ export default function QuotationsList(props) {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonQuery}
-          onPress={() => daysQuery(30)}
+          onPress={() => daysQuery(60)}
         >
-          <Text style={styles.textButtonQuery}>1M</Text>
+          <Text style={styles.textButtonQuery}>2M</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonQuery}
@@ -45,14 +46,14 @@ export default function QuotationsList(props) {
           <Text style={styles.textButtonQuery}>6M</Text>
         </TouchableOpacity>
       </View>
-      <ScrollView style={styles.listQuotationBitcoins}>
-        <FlatList
-          data={props.listTransactions}
-          renderItem={({ item }) => {
-            return <QuotationItems valor={item.valor} data={item.data} />;
-          }}
-        />
-      </ScrollView>
+
+      <FlatList
+        style={styles.listQuotationBitcoins}
+        data={props.listTransactions}
+        renderItem={({ item }) => {
+          return <QuotationItems valor={item.valor} data={item.data} />;
+        }}
+      />
     </Fragment>
   );
 }
